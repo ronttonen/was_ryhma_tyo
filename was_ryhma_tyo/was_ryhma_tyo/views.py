@@ -15,7 +15,7 @@ class Home(View):
 class ListAnnouncements(View):
     Announcements = Announcements
     def get(self, request):
-        anns = self.Announcements.objects.all().order_by('creation_date')
+        anns = self.Announcements.objects.all().order_by('-creation_date')
         return render(template_name="announcements.html", request=self.request, context={'anns': anns})
 
 class CreateAnnouncement(View):
