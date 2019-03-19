@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col s12">
+            <div class="row">
+                <h4 class="col s12">{{ ann.title }}</h4>
+            </div>
+            <div class="row">
+                <h6 class="col s12">Description:</h6>
+                <p class="col s12">{{ ann.custom_text }}</p>
+            </div>
+        <div class="divider"></div>
+    </div>
+    <div class="col s12">
+        <div class="row">
+            <div class="section">
+            <div class="input-field col s12">
+
+                <span>{{ ann.email }}</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
