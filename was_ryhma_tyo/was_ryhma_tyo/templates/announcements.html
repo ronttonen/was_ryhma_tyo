@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row title-top-padding">
+<div>
 
 
-        <h4>Announcements</h4>
-{% if things.count == 0 %}
+<h4>Announcements</h4>
+{% if anns.count == 0 %}
 <p>No Posts Yet</p>
 {% else %}
-<ul class="collection">
+<ul>
     {% for ann in anns %}
-        <a href="/announcement/{{ ann.id }}" class="collection-item">
-            <div class="colection-div collection-title"><span>{{ ann.title }}</span></div>
-            <div class="collection-div collection-description">
+        <a href="/announcement/{{ ann.id }}">
+            <div><span>{{ ann.title }}</span></div>
+            <div>
                 <span>{{ ann.description|slice:'200' }}{% if ann.description|length > 200 %}...{% endif %}</span>
             </div>
         </a>
     {% endfor %}
 </ul>
 {% endif %}
-<button class="waves-effect waves-light btn-large blue show-more-btn" onclick="showMore();">Show More</button>
+<button onclick="showMore();">Show More</button>
 </div>
 {% endblock %}
