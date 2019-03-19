@@ -9,15 +9,17 @@
 {% else %}
 <ul>
     {% for ann in anns %}
-        <a href="/announcement/{{ ann.id }}">
-            <div><span>{{ ann.title }}</span></div>
+        <a href="/announcement/{{ ann.id }}" class="collection-item">
+            <div><span>Title: {{ ann.title }}</span></div>
+            <div><span>Category: {{ ann.category }}</span></div>
             <div>
-                <span>{{ ann.description|slice:'200' }}{% if ann.description|length > 200 %}...{% endif %}</span>
+                <span>Description: {{ ann.custom_text|slice:'200' }}{% if ann.custom_text|length > 200 %}...{% endif %}</span>
             </div>
         </a>
+        <p>----------------</p>
     {% endfor %}
 </ul>
 {% endif %}
-<button onclick="showMore();">Show More</button>
+<button class="show-more-btn" onclick="showMore();">Show More</button>
 </div>
 {% endblock %}
