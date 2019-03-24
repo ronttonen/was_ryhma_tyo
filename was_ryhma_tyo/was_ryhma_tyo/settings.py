@@ -129,4 +129,4 @@ import logging
 import pathlib
 # this creates the log file if it does not exist
 pathlib.Path('was_ryhma_tyo/logs/').mkdir(parents=True, exist_ok=True) 
-logging.basicConfig(filename='was_ryhma_tyo/logs/error.log')
+logging.basicConfig(filename='was_ryhma_tyo/logs/error.log', format='%(asctime)s %(levelname)s %(message)s')
