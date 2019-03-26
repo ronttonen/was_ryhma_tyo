@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5w17_x%^ld4ryx)9j5!i#8f)!#ilkcjuopu2$g203)56d_0n7('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# Remember to write allowed hosts here. DO NOT USE * IT ALLOWS EVERYTHING. 
+# Change localhost to realsiteurl if used on a realsite.
+ALLOWED_HOSTS = ['localhost', 'https://ajax.googleapis.com']
 
 
 # Application definition
@@ -119,3 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Not sure if this is needed for the server. 
+# Uncomment the STATIC_ROOT if needed.
+# STATIC_ROOT= os.path.join(BASE_DIR,'was_ryhma_tyo/static/')
+
+#redirect existing django logs to a file
+import logging
+import pathlib
+# this creates the log file if it does not exist
+pathlib.Path('was_ryhma_tyo/logs/').mkdir(parents=True, exist_ok=True) 
+logging.basicConfig(filename='was_ryhma_tyo/logs/error.log', format='%(asctime)s %(levelname)s %(message)s')
